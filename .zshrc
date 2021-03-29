@@ -91,6 +91,9 @@ plugins=(
 #  zsh-syntax-highlighting
 )
 
+# Source other configs
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -110,6 +113,12 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# Ruby
+export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/ruby/lib"
+export CPPFLAGS="-I/usr/local/opt/ruby/include"
+export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -121,3 +130,4 @@ source $ZSH/oh-my-zsh.sh
 alias hex="hexdump -C"
 alias dockerclean="docker ps -a | grep Exit | awk '{print \$1}' | xargs docker rm"
 alias dockerclear="docker images | grep '^<none>' | awk '{print \$3}' | xargs docker rmi"
+alias awsauth='echo "[default]" > ~/.aws/credentials && aws-okta exec -t 8h okta-global-admin -- env|grep AWS|grep -v OKTA >> ~/.aws/credentials'

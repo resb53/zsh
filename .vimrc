@@ -7,6 +7,7 @@ set smartindent
 set shiftwidth=2
 set tabstop=2
 set spellfile=~/.spellfile.add
+set backspace=indent,eol,start
 autocmd FileType go setlocal noexpandtab
 let g:go_fmt_command = "goimports"
 autocmd FileType make setlocal noexpandtab
