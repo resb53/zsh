@@ -127,6 +127,7 @@ export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ll="ls -lah"
 alias hex="hexdump -C"
 alias dockerclean="docker ps -a | grep Exit | awk '{print \$1}' | xargs docker rm"
 alias dockerclear="docker images | grep '^<none>' | awk '{print \$3}' | xargs docker rmi"
