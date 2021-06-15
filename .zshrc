@@ -119,6 +119,11 @@ export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
 export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 
+# Guile
+export GUILE_LOAD_PATH="/usr/local/share/guile/site/3.0"
+export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
+export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -131,4 +136,4 @@ alias ll="ls -lah"
 alias hex="hexdump -C"
 alias dockerclean="docker ps -a | grep Exit | awk '{print \$1}' | xargs docker rm"
 alias dockerclear="docker images | grep '^<none>' | awk '{print \$3}' | xargs docker rmi"
-alias awsauth='echo "[default]" > ~/.aws/credentials && aws-okta exec -t 8h okta-global-admin -- env|grep AWS|grep -v OKTA >> ~/.aws/credentials'
+alias awsauth='saml2aws login --force --skip-prompt'
