@@ -124,6 +124,12 @@ export GUILE_LOAD_PATH="/usr/local/share/guile/site/3.0"
 export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
 export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
 
+# Python
+eval "$(pyenv init -)"
+
+# Misc
+export EDITOR="vim"
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -137,3 +143,4 @@ alias hex="hexdump -C"
 alias dockerclean="docker ps -a | grep Exit | awk '{print \$1}' | xargs docker rm"
 alias dockerclear="docker images | grep '^<none>' | awk '{print \$3}' | xargs docker rmi"
 alias awsauth='saml2aws login --force --skip-prompt'
+alias yq3='/usr/local/opt/yq@3/bin/yq'
